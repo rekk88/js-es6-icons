@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+.fas{
+    font-size: 3em;
+    padding: 15px 0px;
+}
+
 /* header */
 header{
     height: 160px;
@@ -45,10 +50,11 @@ body .container .content{
 
 
 .box{
-    height: 150px;
+    /* height: 150px; */
     width: 200px;
     background-color: white;
     margin: 10px 10px;
+    text-align: center;
 }
 /* .content::after{
     content: "";
