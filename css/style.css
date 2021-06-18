@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* header */
+header{
+    height: 160px;
+}
+
+header .header_title,
+header nav{
+    height: 50%;
+}
+header .header_title{
+    font-size: 3rem;
+    padding-top: 1.2rem;
+}
+header nav{
+    background-color: lightblue;
+    text-align: center;
+    line-height: 80px;
+}
+
+
+/* body */
+body .container{
+    display: flex;
+    height: calc(100vh - 160px);
+}
+
+.content{
+    height: 100vh;
+}
