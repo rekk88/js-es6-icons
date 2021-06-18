@@ -26,11 +26,38 @@ header nav{
 
 /* body */
 body .container{
-    display: flex;
     height: calc(100vh - 160px);
     overflow-y: scroll;
+    background-color: lightgray;
+    padding: 0px 20px;
+
 }
 
-.content{
-    height: 100vh;
+body .container .content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+
+.box{
+    height: 150px;
+    width: 200px;
+    background-color: white;
+    margin: 10px 0;
+}
+.last_box::after{
+    content: " ";
+    flex: auto;
+}
+
+
+
+
+/* debug */
+
+.debug .container .content{
+
 }
