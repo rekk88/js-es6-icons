@@ -100,3 +100,13 @@ const icons = [
   ];
 
 // alert("ci sono");
+// let html = document.getElementById("contenuto");
+icons.forEach((element) => {
+    const {name , prefix, type, family} = element;
+    document.getElementById("contenuto").innerHTML += `
+        <div class="box">
+            <i class="${family} ${prefix}${name}"></i>
+        </div>
+
+    `;
+});
