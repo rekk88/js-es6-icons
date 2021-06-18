@@ -106,6 +106,7 @@ icons.forEach((element) => {
     document.getElementById("contenuto").innerHTML += `
         <div class="box">
             <i class="${family} ${prefix}${name}"></i>
+            <div class="title">${name.toUpperCase()}</div>
         </div>
 
     `;
