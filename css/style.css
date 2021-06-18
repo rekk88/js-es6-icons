@@ -28,6 +28,7 @@ header nav{
 body .container{
     display: flex;
     height: calc(100vh - 160px);
+    overflow-y: scroll;
 }
 
 .content{
