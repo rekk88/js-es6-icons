@@ -101,15 +101,15 @@ const icons = [
 
 // alert("ci sono");
 // let html = document.getElementById("contenuto");
-icons.forEach((element) => { //scrive nella pagina tutte le icons
-    const {name , prefix, type, family, color} = element;
-    document.getElementById("contenuto").innerHTML += `
-        <div class="box">
-            <i class="${family} ${prefix}${name}"></i>
-            <div class="title">${name.toUpperCase()}</div>
-        </div>
-    `;
-});
+// icons.forEach((element) => { //scrive nella pagina tutte le icons
+//     const {name , prefix, type, family, color} = element;
+//     document.getElementById("contenuto").innerHTML += `
+//         <div class="box">
+//             <i class="${family} ${prefix}${name}"></i>
+//             <div class="title">${name.toUpperCase()}</div>
+//         </div>
+//     `;
+// });
 // icons.forEach((element) => {
 //   element.color = "red"; 
 // });
@@ -136,8 +136,22 @@ let coloredIcons = icons.map((element) => {
   return{ //pusho il colore determinato dallo switch
     ...element, //prende tutti gli elementi (in questo caso "pusha" in coloredIcons un oggetto alla volta)
     color : c,  // con questo aggiungo ad ogni oggetto questa proprietà
-   };
-})
+  };
+  
+});
+
+coloredIcons.forEach((element) => { //scrive nella pagina tutte le icons
+  const {name , prefix, type, family, color} = element;
+  document.getElementById("contenuto").innerHTML += `
+      <div class="box">
+          <i class="${family} ${prefix}${name}" style="color : ${color}"></i>
+          <div class="title">${name.toUpperCase()}</div>
+      </div>
+  `;
+});
+
+
+
 console.log(coloredIcons);
 // let coloredIcons = icons.map((element) => {
 //   return {
