@@ -46,6 +46,8 @@ body .container .content{
     flex-wrap: wrap;
     margin: 0 auto;
     height: max-content;
+    width: 75%;
+    max-width: 1310px;
 }
 
 
