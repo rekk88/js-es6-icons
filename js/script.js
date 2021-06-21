@@ -99,21 +99,7 @@ const icons = [
     },
   ];
 
-// alert("ci sono");
-// let html = document.getElementById("contenuto");
-// icons.forEach((element) => { //scrive nella pagina tutte le icons
-//     const {name , prefix, type, family, color} = element;
-//     document.getElementById("contenuto").innerHTML += `
-//         <div class="box">
-//             <i class="${family} ${prefix}${name}"></i>
-//             <div class="title">${name.toUpperCase()}</div>
-//         </div>
-//     `;
-// });
-// icons.forEach((element) => {
-//   element.color = "red"; 
-// });
-//asegno un colore per ogni tipo 
+//asegno un colore per ogni tipo
 let coloredIcons = icons.map((element) => {
   let c;
   switch(element.type){
@@ -131,7 +117,6 @@ let coloredIcons = icons.map((element) => {
       break;
     default:
       console.log("qualcosa non funziona, merda!");
-
   }
   return{ //pusho il colore determinato dallo switch
     ...element, //prende tutti gli elementi (in questo caso "pusha" in coloredIcons un oggetto alla volta)
@@ -140,31 +125,46 @@ let coloredIcons = icons.map((element) => {
   
 });
 
-coloredIcons.forEach((element) => { //scrive nella pagina tutte le icons
-  const {name , prefix, type, family, color} = element;
-  document.getElementById("contenuto").innerHTML += `
-      <div class="box">
-          <i class="${family} ${prefix}${name}" style="color : ${color}"></i>
-          <div class="title">${name.toUpperCase()}</div>
-      </div>
-  `;
+
+//stampa delle icone al caricamento della pagina 
+print(coloredIcons);
+//event change su select
+let select = document.getElementById("categorie");
+select.addEventListener("change",function(){
+  let valore  = select.value;
+  console.log(valore);
+  
+  if(valore == "all"){
+    print(coloredIcons);
+  }
+  else{
+    let filtered = coloredIcons.filter((object) => object.type == valore);
+    print(filtered);
+
+  }
+ 
+  console.log(filtered);
+
+
 });
 
 
 
+
+      
+function print(elemento){
+  document.getElementById("contenuto").innerHTML= "";
+  elemento.forEach(element => {
+    const {name , prefix, type, family, color} = element;
+    document.getElementById("contenuto").innerHTML += `
+      <div class="box">
+          <i class="${family} ${prefix}${name}" style="color : ${color}"></i>
+          <div class="title">${name.toUpperCase()}</div>
+      </div>
+    `;
+  });
+  
+}
+
+
 console.log(coloredIcons);
-// let coloredIcons = icons.map((element) => {
-//   return {
-//     ...element , color,
-//   }
-// });
-// console.log(coloredIcons);
-//utenti : viola
-//animali : blu
-//verdure : arancio
-
-//coloro le icone per tipo
-
-
-//return ...element , color 
-//ritorna un nuovo elemento con aggiunta la propietà color 
